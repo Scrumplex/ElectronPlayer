@@ -2,7 +2,6 @@
 const { app, BrowserWindow, Menu, ipcMain, dialog } = require('electron');
 const fs = require('fs'),
   path = require('path'),
-  widevine = require('electron-widevinecdm'),
   Store = require('electron-store');
 
 const headerScript = fs.readFileSync(
@@ -15,9 +14,6 @@ let mainWindow; // Global Windows Object
 const menu = require('./menu');
 const store = new Store();
 global.services = [];
-
-//Load Widevine
-widevine.load(app);
 
 function createWindow() {
   // Create the browser window.
